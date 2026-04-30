@@ -31,7 +31,7 @@ interface Props {
 
 let { title, banner, description, lang, setOGTypeArticle } = Astro.props;
 
-const isHomePage = pathsEqual(Astro.url.pathname, url("/"));
+const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '/zh/';
 
 const configHue = siteConfig.themeColor.hue;
 if (!banner || typeof banner !== "string" || banner.trim() === "") {
@@ -472,7 +472,7 @@ function setupSwupHooks() {
 
 	window.swup.hooks.on('visit:start', (visit: any) => {
 		const bodyElement = document.querySelector('body');
-		if (pathsEqual(visit.to.url, url('/'))) {
+		if (pathsEqual(visit.to.url, url('/')) || pathsEqual(visit.to.url, url('/zh/'))) {
 			bodyElement?.classList.add('lg:is-home');
 		} else {
 			bodyElement?.classList.remove('lg:is-home');

@@ -4,6 +4,7 @@ import { getPostUrlBySlug } from "../utils/url-utils";
 
 // 定义组件接收的属性
 export let sortedPosts: Post[] = [];
+export let lang: string = 'en';
 
 // 定义文章和年份分组的数据结构
 interface Post {
@@ -112,7 +113,7 @@ onMount(async () => {
                 
                 <!-- 文章数量统计 -->
                 <div class="w-[70%] md:w-[80%] transition text-left text-50">
-                    {group.posts.length} 篇文章
+                    {group.posts.length} {lang == 'zh' ? `篇文章` : `posts`}
                 </div>
             </div>
 

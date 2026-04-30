@@ -48,6 +48,8 @@ const coverWidth = "28%";
 
 // 获取文章渲染后的额外元数据
 const { remarkPluginFrontmatter } = await entry.render();
+
+const lang = Astro.url.pathname.startsWith('/zh') ? 'zh' : 'en';
 ---
 
 <!-- 文章卡片容器 -->
@@ -119,7 +121,7 @@ const { remarkPluginFrontmatter } = await entry.render();
         <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2">
           <Icon name="material-symbols:notes-rounded"></Icon>
         </div>
-        <div class="text-sm">{remarkPluginFrontmatter.words} 字</div>
+        <div class="text-sm">{remarkPluginFrontmatter.words} {lang == 'zh' ? `字` : `words`}</div>
       </div>
       <div class="flex flex-row items-center">
         <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2">

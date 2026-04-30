@@ -9,7 +9,16 @@ function joinUrl(...parts: string[]): string {
 	return joined.replace(/\/+/g, "/");
 }
 
-export function getPostUrlBySlug(slug: string): string {
+export function getPostUrlBySlug(slug: string) {
+	// If it's a Chinese post...
+	if (slug.startsWith('zh/')) {
+		// 1. Remove the 'zh/' from the slug
+		const cleanSlug = slug.replace(/^zh\//, '');
+		// 2. Put '/zh/' at the very beginning of the URL!
+		return url(`/zh/posts/${cleanSlug}/`);
+	}
+
+	// Otherwise, treat it like a normal English post
 	return url(`/posts/${slug}/`);
 }
 

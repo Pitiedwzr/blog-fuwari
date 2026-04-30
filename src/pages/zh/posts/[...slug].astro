@@ -7,23 +7,28 @@ import { getSortedPosts } from "@utils/content-utils";
 import { getDir, getPostUrlBySlug } from "@utils/url-utils";
 import { Icon } from "astro-icon/components";
 import { licenseConfig } from "src/config";
-import ImageWrapper from "../../components/misc/ImageWrapper.astro";
-import PostMetadata from "../../components/PostMeta.astro";
-import { profileConfig, siteConfig } from "../../config";
-import { formatDateToYYYYMMDD } from "../../utils/date-utils";
+import ImageWrapper from "../../../components/misc/ImageWrapper.astro";
+import PostMetadata from "../../../components/PostMeta.astro";
+import { profileConfig, siteConfig } from "../../../config";
+import { formatDateToYYYYMMDD } from "../../../utils/date-utils";
 
-import Giscus from "../../components/misc/Giscus.astro";
+import Giscus from "../../../components/misc/Giscus.astro";
 
 export async function getStaticPaths() {
     const allPosts = await getSortedPosts();
 
-    // Only get English posts (ignore the zh folder)
-    const enPosts = allPosts.filter(post => !post.id.startsWith('zh/'));
+    // 1. Only get Chinese posts
+    const zhPosts = allPosts.filter(post => post.id.startsWith('zh/'));
 
-    return enPosts.map(post => ({
-        params: { slug: post.slug },
-        props: { entry: post }
-    }));
+    return zhPosts.map(post => {
+        // 2. Remove 'zh/' from the beginning of the slug
+        const cleanSlug = post.slug.replace(/^zh\//, '');
+
+        return {
+            params: { slug: cleanSlug },
+            props: { entry: post }
+        };
+    });
 }
 
 const { entry } = Astro.props;
@@ -59,7 +64,7 @@ const jsonLd = {
                     <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2">
                         <Icon name="material-symbols:notes-rounded"></Icon>
                     </div>
-                    <div class="text-sm">{remarkPluginFrontmatter.words} words</div>
+                    <div class="text-sm">{remarkPluginFrontmatter.words} 字</div>
                 </div>
                 <div class="flex flex-row items-center">
                     <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2">

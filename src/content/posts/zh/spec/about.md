@@ -5,7 +5,7 @@
 
 本站 `Favicon` 原图取自 [Pixiv @ReRin](https://www.pixiv.net/artworks/113745329)
 
-# About&隐私政策
+# 关于&隐私政策
 
 最后更新日期：2025年8月
 
@@ -17,10 +17,10 @@
 
 ## 网站性质
 
-This is a static website, which means:
-- We do not store your personal information on our servers
-- The website content is pre-generated and does not involve the dynamic processing of user data
-- We do not actively collect or store your personal information
+本网站是一个静态网站，这意味着：
+- 我们不会在服务器端存储您的个人信息
+- 网站内容是预先生成的，不会动态处理用户数据
+- 我们不会主动收集或存储您的个人信息
 
 ## 第三方服务
 

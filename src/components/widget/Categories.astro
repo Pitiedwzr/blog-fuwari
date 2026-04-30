@@ -10,6 +10,8 @@ const COLLAPSE_THRESHOLD = 5;
 
 const isCollapsed = categories.length >= COLLAPSE_THRESHOLD;
 
+const lang = Astro.url.pathname.startsWith('/zh') ? 'zh' : 'en';
+
 interface Props {
 	class?: string;
 	style?: string;
@@ -18,7 +20,7 @@ const className = Astro.props.class;
 const style = Astro.props.style;
 ---
 
-<WidgetLayout name="分类" id="categories" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT}
+<WidgetLayout name={lang == 'zh' ? `分类` : `Categories`} id="categories" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT}
                 class={className} style={style}
 >
     {categories.map((c) =>

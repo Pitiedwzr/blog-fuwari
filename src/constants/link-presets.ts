@@ -1,24 +1,24 @@
 import { LinkPreset, type NavBarLink } from "@/types/config";
 
-export const LinkPresets: { [key in LinkPreset]: NavBarLink } = {
+export const LinkPresets = {
 	[LinkPreset.Home]: {
-		name: "主页",
-		url: "/",
+		name: { en: "Home", zh: "主页" }, // Change string to object
+		url: { en: "/", zh: "/zh/" },
 	},
 	[LinkPreset.About]: {
-		name: "关于",
-		url: "/about/",
+		name: { en: "About", zh: "关于" },
+		url: { en: "/about/", zh: "/zh/about/" },
 	},
 	[LinkPreset.Archive]: {
-		name: "时间线",
-		url: "/archive/",
+		name: { en: "Archive", zh: "时间线" },
+		url: { en: "/archive/", zh: "/zh/archive/" },
 	},
 	[LinkPreset.Series]: {
-		name: "专栏",
-		url: '/series/',
+		name: { en: "Series", zh: "专栏" },
+		url: { en: "/series/", zh: "/zh/series/" },
 	},
 	[LinkPreset.Friends]: {
-		name: "友链",
-		url: '/friends/',
+		name: { en: "Links", zh: "友链" },
+		url: { en: "/friends/", zh: "/zh/friends/" },
 	},
 };

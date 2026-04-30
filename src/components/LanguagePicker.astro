@@ -1,0 +1,95 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="relative z-50" id="lang-picker-wrapper" role="menu" tabindex="-1">
+    <button aria-label="Select Language" class="relative btn-plain scale-animation rounded-lg h-11 px-3 active:scale-90" id="lang-switch-btn">
+        <div class="flex items-center gap-1.5">
+            <Icon name="material-symbols:language" class="text-[1.25rem]" />
+            <!-- The text will be filled in by JS below -->
+            <span class="text-sm font-bold uppercase" id="current-lang-text"></span>
+        </div>
+    </button>
+
+    <div id="lang-panel" class="absolute transition float-panel-closed top-11 -right-2 pt-5">
+        <div class="card-base float-panel p-2">
+            <!-- Notice we use # for href and added data-target-lang -->
+            <a href="#" data-target-lang="en" class="lang-link flex transition whitespace-nowrap items-center !justify-start w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5">
+                English
+            </a>
+            <a href="#" data-target-lang="zh" class="lang-link flex transition whitespace-nowrap items-center !justify-start w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95">
+                中文
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. Dropdown Animation Logic
+    const wrapper = document.getElementById('lang-picker-wrapper');
+    const btn = document.getElementById('lang-switch-btn');
+    const panel = document.getElementById('lang-panel');
+    let panelTimeout: number | null = null;
+
+    if (wrapper && btn) {
+        btn.addEventListener('mouseenter', () => {
+            if (panelTimeout) clearTimeout(panelTimeout);
+            if (panel) panel.classList.remove("float-panel-closed");
+        });
+        wrapper.addEventListener('mouseleave', () => {
+            if (panelTimeout) clearTimeout(panelTimeout);
+            panelTimeout = window.setTimeout(() => {
+                if (panel) panel.classList.add("float-panel-closed");
+            }, 150);
+        });
+    }
+
+    // 2. Dynamic Language Logic (Fixes the Swup issue!)
+    function setupLanguageSwitcher() {
+        const currentPath = window.location.pathname;
+        const isZh = currentPath.startsWith('/zh');
+
+        // Update the button text so it's never "frozen"
+        const textSpan = document.getElementById('current-lang-text');
+        if (textSpan) textSpan.innerText = isZh ? 'ZH' : 'EN';
+
+        // Set up the click events for the links
+        document.querySelectorAll('.lang-link').forEach(link => {
+            const targetLang = link.getAttribute('data-target-lang');
+
+            // Highlight the active language
+            if ((isZh && targetLang === 'zh') || (!isZh && targetLang === 'en')) {
+                link.classList.add('text-[var(--primary)]', 'font-bold');
+            } else {
+                link.classList.remove('text-[var(--primary)]', 'font-bold');
+            }
+
+            // Calculate the exact URL at the moment of clicking
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                let newPath = window.location.pathname;
+
+                if (targetLang === 'zh' && !newPath.startsWith('/zh')) {
+                    // Add /zh to the URL
+                    newPath = '/zh' + (newPath === '/' ? '/' : newPath);
+                    newPath = newPath.replace('//', '/'); // safety check
+                } else if (targetLang === 'en' && newPath.startsWith('/zh')) {
+                    // Remove /zh from the URL
+                    newPath = newPath.slice(3) || '/';
+                }
+
+                // Force a full browser reload to the new language page
+                window.location.href = newPath;
+            });
+        });
+    }
+
+    // Run the setup immediately
+    setupLanguageSwitcher();
+
+    // Also run it every time Swup changes the page, so the UI updates
+    document.addEventListener('swup:enable', () => {
+        if (window.swup) window.swup.hooks.on('page:view', setupLanguageSwitcher);
+    });
+    if (window.swup) window.swup.hooks.on('page:view', setupLanguageSwitcher);
+</script>

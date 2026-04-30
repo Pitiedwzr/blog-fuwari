@@ -1,18 +1,18 @@
 ---
 import type { GetStaticPaths } from "astro";
-import Pagination from "../components/control/Pagination.astro";
-import PostPage from "../components/PostPage.astro";
-import { PAGE_SIZE } from "../constants/constants";
-import MainGridLayout from "../layouts/MainGridLayout.astro";
-import { getSortedPosts } from "../utils/content-utils";
+import Pagination from "../../components/control/Pagination.astro";
+import PostPage from "../../components/PostPage.astro";
+import { PAGE_SIZE } from "../../constants/constants";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allBlogPosts = await getSortedPosts();
 
-    // Keep English posts (Anything that DOES NOT include '/zh/')
-    const enPosts = allBlogPosts.filter(post => !post.slug.startsWith('zh/'));
+    // Keep ONLY Chinese posts (Anything that DOES include '/zh/')
+    const zhPosts = allBlogPosts.filter(post => post.slug.startsWith('zh/'));
 
-    return paginate(enPosts, { pageSize: PAGE_SIZE });
+    return paginate(zhPosts, { pageSize: PAGE_SIZE });
 }) satisfies GetStaticPaths;
 // https://github.com/withastro/astro/issues/6507#issuecomment-1489916992
 
