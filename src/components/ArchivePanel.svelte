@@ -53,8 +53,11 @@ onMount(async () => {
     const urlCategories = params.getAll("category");
     const uncategorized = params.has("uncategorized");
 
-    // 初始化为全部文章
-    let filteredPosts: Post[] = [...sortedPosts];
+    // === ADD THE LANGUAGE FILTER HERE ===
+    let filteredPosts: Post[] = sortedPosts.filter(post => {
+        const isZh = post.slug.startsWith('zh/');
+        return lang === 'zh' ? isZh : !isZh;
+    });
 
     // 根据标签过滤
     if (urlTags.length > 0) {
