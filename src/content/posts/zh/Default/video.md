@@ -2,14 +2,12 @@
 title: 在文章中包含视频
 published: 1001-08-01
 description: 本文将演示如何在博客文章中嵌入视频。
-image: "https://api.lxtu.cn/api.php?category=clysj"
 tags: [Example, Video]
 category: Default
 draft: false
 series: Examples
 ---
 
-Just copy the embed code from YouTube or other platforms, and paste it in the markdown file.
 只需从 YouTube 或其他平台复制嵌入代码，然后将其粘贴到 Markdown 文件中。
 
 ```yaml

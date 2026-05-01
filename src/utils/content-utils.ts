@@ -51,11 +51,20 @@ export type Tag = {
 	count: number;
 };
 
-export async function getTagList(): Promise<Tag[]> {
-	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
-	});
+// Add lang?: string
+export async function getTagList(lang?: string): Promise<Tag[]> {
+	const allBlogPosts = await getCollection<"posts">("posts", ({ data, id }) => {
+		const isPublished = import.meta.env.PROD ? data.draft !== true : true;
 
+		// Filter by language so the counts are correct!
+		if (lang === 'zh') {
+			return isPublished && id.startsWith('zh/');
+		} else if (lang === 'en') {
+			return isPublished && !id.startsWith('zh/');
+		}
+
+		return isPublished;
+	});
 	const countMap: { [key: string]: number } = {};
 	allBlogPosts.forEach((post: { data: { tags: string[] } }) => {
 		post.data.tags.forEach((tag: string) => {
@@ -63,12 +72,10 @@ export async function getTagList(): Promise<Tag[]> {
 			countMap[tag]++;
 		});
 	});
-
 	// sort tags
 	const keys: string[] = Object.keys(countMap).sort((a, b) => {
 		return a.toLowerCase().localeCompare(b.toLowerCase());
 	});
-
 	return keys.map((key) => ({ name: key, count: countMap[key] }));
 }
 
@@ -78,35 +85,41 @@ export type Category = {
 	url: string;
 };
 
-export async function getCategoryList(): Promise<Category[]> {
-	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
-	});
-	const count: { [key: string]: number } = {};
-	allBlogPosts.forEach((post: { data: { category: string | null } }) => {
-		if (!post.data.category) {
-			// 不再为未分类的文章创建"未分类"分类
-			return;
+// 1. Add lang?: string to the parameters
+export async function getCategoryList(lang?: string): Promise<Category[]> {
+	const allBlogPosts = await getCollection<"posts">("posts", ({ data, id }) => {
+		// Check if draft
+		const isPublished = import.meta.env.PROD ? data.draft !== true : true;
+
+		// Filter by language based on the folder structure
+		if (lang === 'zh') {
+			return isPublished && id.startsWith('zh/');
+		} else if (lang === 'en') {
+			return isPublished && !id.startsWith('zh/');
 		}
 
+		return isPublished;
+	});
+
+	const count: { [key: string]: number } = {};
+	allBlogPosts.forEach((post: { data: { category: string | null } }) => {
+		if (!post.data.category) return;
 		const categoryName =
 			typeof post.data.category === "string"
 				? post.data.category.trim()
 				: String(post.data.category).trim();
-
 		count[categoryName] = count[categoryName] ? count[categoryName] + 1 : 1;
 	});
-
 	const lst = Object.keys(count).sort((a, b) => {
 		return a.toLowerCase().localeCompare(b.toLowerCase());
 	});
-
 	const ret: Category[] = [];
 	for (const c of lst) {
 		ret.push({
 			name: c,
 			count: count[c],
-			url: getCategoryUrl(c),
+			// 2. Pass lang to the URL generator!
+			url: getCategoryUrl(c, lang),
 		});
 	}
 	return ret;

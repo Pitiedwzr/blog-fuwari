@@ -11,18 +11,18 @@ export const siteConfig: SiteConfig = {
 	title: "Pitiedwzr's Blog",
 	subtitle: "Be Well.",
 	themeColor: {
-		hue: 230, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 30, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
 		forceDarkMode: false, // Force dark mode and hide the light/dark switcher
 	},
 	banner: {
 		enable: true,
-		src: "/Celestia.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		src: "/105955957_Yuji.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		position: "top", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: true, // Display the credit text of the banner image
-			text: "Pixiv @chokei", // Credit text to be displayed
-			url: "https://www.pixiv.net/artworks/122782209", // (Optional) URL link to the original artwork or artist's page
+			text: "Pixiv @杯面", // Credit text to be displayed
+			url: "https://www.pixiv.net/artworks/105955957", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
 	toc: {
@@ -59,7 +59,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "/avatar.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/' 原assets/images/demo-avatar.png,可选https://q2.qlogo.cn/headimg_dl?dst_uin=189563385&spec=0
+	avatar: "/avatar_hikaru.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/' 原assets/images/demo-avatar.png,可选https://q2.qlogo.cn/headimg_dl?dst_uin=189563385&spec=0
 	name: "Pitiedwzr",
 	bio: "Be Well.",
 	links: [

@@ -36,6 +36,8 @@ const hasTags = tags && tags.length > 0;
 
 // 预计算是否有分类
 const hasCategory = category && category.trim() !== "";
+
+const lang = Astro.url.pathname.startsWith('/zh') ? 'zh' : 'en';
 ---
 
 <!-- 
@@ -86,7 +88,7 @@ const hasCategory = category && category.trim() !== "";
       <div class="flex flex-row flex-nowrap items-center">
         <!-- 分类链接 -->
         <a 
-          href={getCategoryUrl(category)} 
+          href={getCategoryUrl(category, lang)}
           aria-label={`View all posts in the ${category} category`}
           class="link-lg transition text-50 text-sm font-medium
                  hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"
@@ -122,7 +124,7 @@ const hasCategory = category && category.trim() !== "";
             )}
             {/* 单个标签链接 */}
             <a
-              href={getTagUrl(tag)}
+              href={getTagUrl(tag, lang)}
               aria-label={`View all posts with the ${tag.trim()} tag`}
               class="link-lg transition text-50 text-sm font-medium
                      hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"

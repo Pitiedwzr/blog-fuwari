@@ -9,6 +9,7 @@ interface Props {
 	class?: string;
 	style?: string;
 }
+const lang = Astro.url.pathname.startsWith('/zh') ? 'zh' : 'en';
 const { id, name, isCollapsed, collapsedHeight, style } = Astro.props;
 const className = Astro.props.class;
 ---
@@ -22,7 +23,7 @@ const className = Astro.props.class;
     {isCollapsed && <div class="expand-btn px-4 -mb-2">
         <button class="btn-plain rounded-lg w-full h-9">
             <div class="text-[var(--primary)] flex items-center justify-center gap-2 -translate-x-2">
-                <Icon name="material-symbols:more-horiz" class="text-[1.75rem]"></Icon> 这里还有哦
+                <Icon name="material-symbols:more-horiz" class="text-[1.75rem]"></Icon> {lang == 'zh' ? `这里还有哦` : `There is more`}
             </div>
         </button>
     </div>}

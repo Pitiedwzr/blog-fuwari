@@ -22,18 +22,19 @@ export function getPostUrlBySlug(slug: string) {
 	return url(`/posts/${slug}/`);
 }
 
-export function getTagUrl(tag: string): string {
-	if (!tag) return url("/archive/");
-	return url(`/archive/?tag=${encodeURIComponent(tag.trim())}`);
-}
+export function getTagUrl(tag: string, lang?: string): string {
+	// Determine the correct base path based on language
+	const prefix = lang === 'zh' ? '/zh' : '';
 
-export function getCategoryUrl(category: string | null): string {
-	if (
-		!category ||
-		category.trim() === ""
-	)
-		return url("/archive/");
-	return url(`/archive/?category=${encodeURIComponent(category.trim())}`);
+	if (!tag) return url(`${prefix}/archive/`);
+	return url(`${prefix}/archive/?tag=${encodeURIComponent(tag.trim())}`);
+}
+export function getCategoryUrl(category: string | null, lang?: string): string {
+	// Determine the correct base path based on language
+	const prefix = lang === 'zh' ? '/zh' : '';
+
+	if (!category || category.trim() === "") return url(`${prefix}/archive/`);
+	return url(`${prefix}/archive/?category=${encodeURIComponent(category.trim())}`);
 }
 
 export function getDir(path: string): string {

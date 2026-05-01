@@ -3,14 +3,15 @@ import { getCategoryList } from "../../utils/content-utils";
 import ButtonLink from "../control/ButtonLink.astro";
 import WidgetLayout from "./WidgetLayout.astro";
 
-const categories = await getCategoryList();
+// 1. Calculate lang first
+const lang = Astro.url.pathname.startsWith('/zh') ? 'zh' : 'en';
+// 2. Pass lang into the function
+const categories = await getCategoryList(lang);
 
 const COLLAPSED_HEIGHT = "7.5rem";
 const COLLAPSE_THRESHOLD = 5;
 
 const isCollapsed = categories.length >= COLLAPSE_THRESHOLD;
-
-const lang = Astro.url.pathname.startsWith('/zh') ? 'zh' : 'en';
 
 interface Props {
 	class?: string;

@@ -8,11 +8,17 @@ interface Props {
 
 const { series } = Astro.props
 
+// 1. Get the language FIRST
 const lang = Astro.url.pathname.startsWith('/zh') ? 'zh' : 'en';
-
-// 获取所有文章并筛选出属于指定系列的文章
+// 2. Fetch all posts
 const allPosts = await getSortedPosts()
-const seriesPosts = allPosts.filter(post => post.data.series === series)
+// 3. FILTER by language before doing anything else!
+let posts = allPosts.filter(post => {
+  const isZh = post.slug.startsWith('zh/');
+  return lang === 'zh' ? isZh : !isZh;
+});
+
+const seriesPosts = posts.filter(post => post.data.series === series)
 
 // 按时间倒序排列（最新的在前）
 const sortedSeriesPosts = [...seriesPosts].sort((a, b) => 

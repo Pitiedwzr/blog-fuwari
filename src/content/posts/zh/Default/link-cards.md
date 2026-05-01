@@ -8,13 +8,10 @@ draft: false
 series: Examples
 ---
 
-## About Link Cards  
 ## 关于链接卡片
 
-Link Cards are similar to the `<LinkCard>` component in [Starlight](https://starlight.astro.build), displaying links in a card format.  
 链接卡片类似于 [Starlight](https://starlight.astro.build) 中的 `<LinkCard>` 组件，以卡片形式展示链接。
 
-## Usage  
 ## 使用方法
 > 现已更新,调用方法如下
 ### 自定义标题和描述
@@ -31,11 +28,9 @@ Link Cards are similar to the `<LinkCard>` component in [Starlight](https://star
 
 > 下列均已失效
 
-Include only a single "bare" link (a link without descriptive text), or something similar, within a paragraph in Markdown, and it will automatically be converted into a Link Card.  
 在 Markdown 段落中仅包含一个"裸链接"（无描述文本的纯 URL）或类似结构，它将自动转换为链接卡片。
 
 ```markdown
-**External Links**  
 **外部链接**
 
 https://astro.build/
@@ -44,15 +39,12 @@ https://astro.build/
 
 [https://fuwari.oh1.top/](https://fuwari.oh1.top/)
 
-**Internal Links**  
 **内部链接**
 
 [/archive/](/archive/)
 
-For more details, see the internalLink option section.  
 更多细节请参见 internalLink 选项部分。
 
-**IDN (Internationalized Domain Name)**  
 **IDN（国际化域名）**
 
 https://はじめよう.みんな/
@@ -70,13 +62,10 @@ https://はじめよう.みんな/
 
 > [!NOTE]  
 > 注意
-> Once the cards are displayed, try changing the theme color or enabling dark mode!  
 > 卡片显示后，请尝试更改主题颜色或启用暗黑模式！
 
-## Options  
 ## 配置选项
 
-You can specify the options in the `astro.config.mjs` file.  
 您可以在 `astro.config.mjs` 文件中指定配置选项。
 
 ```javascript
@@ -87,11 +76,10 @@ export default defineConfig({
   ...
   integrations: [
     ...
-    fuwariLinkCard(), // Plugin here // 在此处添加插件
+    fuwariLinkCard(), // 在此处添加插件
     ...
 ```
 
-If the order of plugins is complex, you can also specify it as a remark plugin.  
 如果插件顺序较复杂，也可将其指定为 remark 插件。
 
 ```javascript
@@ -104,7 +92,7 @@ export default defineConfig({
     ...
     remarkPlugins: [
       ...
-      remarkLinkCard, // Plugin here // 在此处添加插件
+      remarkLinkCard, // 在此处添加插件
       ...
 ```
 
@@ -127,7 +115,6 @@ export default defineConfig({
 | cache            | Object          | See detailed options below.                                                                                                                    | Download and cache images during the build process.                                                                                                                                                                                                                            |
 |                  |                 |                                                                                                                                                | 在构建过程中下载并缓存图片                                                                                                                                                                                                                                                    |
 
-### linkAttributes  
 ### 链接属性配置
 
 | Name   | Type   | Default | Description                                                                                                                      |  
@@ -137,7 +124,6 @@ export default defineConfig({
 | rel    | string | ''      | Define the relationship between the current document and the linked document. The default (empty) does not set any relationship. |
 |        |        |         | 定义当前文档与链接文档的关系（默认留空不设置 rel）                                                                               |
 
-### rewriteRules  
 ### 重写规则
 
 | Name         | Type            | Default | Description                                                   |  
@@ -147,7 +133,6 @@ export default defineConfig({
 | rewriteSteps | Array\<Object\> |         | Defines rewrite rules for specific metadata attributes.       |
 |              |                 |         | 定义特定元数据属性的重写规则                                  |
 
-Below is an example that shows how to rewrite the "title" and "description" for metadata fetched from links pointing to a GitHub repository.  
 以下示例展示如何重写 GitHub 仓库链接的 "title" 和 "description" 元数据：
 
 ```javascript
@@ -180,7 +165,6 @@ rewriteRules: [
 | replacement | string |         | String to replace the matched pattern in the metadata attribute.                                                                                        |
 |             |        |         | 替换元数据属性中匹配项的字符串                                                                                                                          |
 
-### internalLink  
 ### 内部链接配置
 
 | Name    | Type    | Default | Description                                                                                                                                                                                                                                                          |  
@@ -190,7 +174,6 @@ rewriteRules: [
 | site    | string  | ''      | Specify the same deployed URL as Astro's. For details, refer [here](https://docs.astro.build/en/reference/configuration-reference/#site "Configuration Reference"). **When used as an integration, if not specified, this option will be determined automatically.** |
 |         |         |         | 指定与 Astro 相同的部署 URL（[详情](https://docs.astro.build/en/reference/configuration-reference/#site)）。**作为集成使用时，如未指定将自动确定**                                                                                                                      |
 
-### cache  
 ### 缓存配置
 
 | Name         | Type    | Default                                                                                                           | Description                                                                                                                                                                                                                              |  
@@ -208,18 +191,14 @@ rewriteRules: [
 | userAgent    | string  | 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36' | Identifier included in HTTP request headers to specify the client.                                                                                                                                                                       |
 |              |         |                                                                                                                   | HTTP 请求头中的客户端标识符                                                                                                                                                                                                              |
 
-### Quick and Easy Options Setup  
 ### 快速配置选项
 
-This plugin uses `@fastify/deepmerge` to simplify options setup.  
 本插件使用 `@fastify/deepmerge` 简化选项配置。
 
 <https://www.npmjs.com/package/@fastify/deepmerge>
 
-## HTML Structure for Styling  
 ## 用于样式化的 HTML 结构
 
-The styles are specified in `src/styles/link-card.css`, and the HTML is automatically generated. Below is an example structure to guide you when customizing the styles:  
 样式定义在 `src/styles/link-card.css` 中，HTML 会自动生成。以下是自定义样式时的参考结构：
 
 ```html

@@ -1,5 +1,5 @@
 # About
-![随机图床](https://rba.kanostar.top/adapt)
+![随机图床](https://api.r10086.com/%E6%A8%B1%E9%81%93%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87api%E6%8E%A5%E5%8F%A3.php?%E5%9B%BE%E7%89%87%E7%B3%BB%E5%88%97=%E5%92%92%E6%9C%AF%E5%9B%9E%E6%88%98)
 
 [/posts/mc/download/](/posts/mc/download/)
 
