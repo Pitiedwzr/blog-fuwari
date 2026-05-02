@@ -21,4 +21,4 @@ tags: [Markdown, Blogging, Demo]
 category: Examples
 draft: false
 ---
-PS:虽然啊，但是啊，无奖竞猜我这个怎么发出来的
+PS: Mind you, though, how on earth did I end up posting this?
