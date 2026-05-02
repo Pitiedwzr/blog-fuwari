@@ -1,125 +1,85 @@
 # About
-![随机图床](https://api.r10086.com/%E6%A8%B1%E9%81%93%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87api%E6%8E%A5%E5%8F%A3.php?%E5%9B%BE%E7%89%87%E7%B3%BB%E5%88%97=%E5%92%92%E6%9C%AF%E5%9B%9E%E6%88%98)
+![Random Image of JJK](https://api.r10086.com/%E6%A8%B1%E9%81%93%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87api%E6%8E%A5%E5%8F%A3.php?%E5%9B%BE%E7%89%87%E7%B3%BB%E5%88%97=%E5%92%92%E6%9C%AF%E5%9B%9E%E6%88%98)
 
-[/posts/mc/download/](/posts/mc/download/)
+The `Favicon` of this website is from [Pixiv @ReRin](https://www.pixiv.net/artworks/113745329)
 
-本站 `Favicon` 原图取自 [Pixiv @ReRin](https://www.pixiv.net/artworks/113745329)
+# About&Privacy Policy
 
-# About&隐私政策
+Last updated：02 May 2026
 
-最后更新日期：2025年8月
+## Overview
 
-## 概述
+This is a static website built using the `Fuwari` framework, which is open-sourced on `GitHub` under the `MIT` licence. We take your privacy very seriously. This privacy policy explains how we may collect, use and disclose your information when you visit our website.
 
-本网站是一个静态网站，采用`Fuwari`框架，使用`MIT`协议开源于`Github`，我们非常重视您的隐私。本隐私政策说明了当您访问我们的网站时，可能收集、使用和披露您信息的方式。
+::github{repo="Pitiedwzr/blog-Fuwari"}
 
-::github{repo="yCENzh/Fuwari-yCENzh"}
-
-## 网站性质
+## Nature of the website
 
 This is a static website, which means:
 - We do not store your personal information on our servers
 - The website content is pre-generated and does not involve the dynamic processing of user data
 - We do not actively collect or store your personal information
 
-## 第三方服务
+## Third-party services
 
-尽管本网站本身是静态的，但我们使用了以下第三方服务，这些服务可能会收集和处理您的信息：
+Although the website itself is static, we use the following third-party services, which may collect and process your information:
 
-### CDN 和托管服务
-
-根据您访问的节点不同，以下服务提供商可能会收集您的信息：
+### CDN and hosting services
 
 **Cloudflare**
-- 可能收集的信息：IP 地址、访问时间、请求的页面、浏览器信息
-- 用途：提供 CDN 服务、安全防护、性能优化
-- 隐私政策：[Cloudflare 隐私政策](https://www.cloudflare.com/privacypolicy/)
+- Information that may be collected: IP address, time of visit, pages requested, browser information
+- Purpose: To provide CDN services, security protection and performance optimisation
+- Privacy Policy：[Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/)
 
-**Netlify**
-- 可能收集的信息：IP 地址、访问日志、性能数据
-- 用途：网站托管、部署服务
-- 隐私政策：[Netlify 隐私政策](https://www.netlify.com/privacy/)
+### Analytical and statistical services
 
-### 分析和统计服务
+**Umami**
+- Information that may be collected：Page views, traffic sources, device type (anonymised)
+- Purpose：Website traffic statistics and analysis
+- Features: Emphasis on privacy protection; no use of cookies; data is processed anonymously
 
-**百度统计**
-- 可能收集的信息：访问页面、访问时间、地理位置、设备信息、浏览器信息
-- 用途：网站流量分析、用户行为分析
-- 隐私政策：[百度统计隐私政策](https://tongji.baidu.com/web/help/article?id=330)
+## Cookie and local storage
 
-**Google Analytics（谷歌分析）**
-- 可能收集的信息：匿名化的用户数据、页面浏览量、会话时长、地理位置
-- 用途：网站性能分析、用户行为分析
-- 隐私政策：[Google 隐私政策](https://policies.google.com/privacy)
+Our website may use following technologies：
+- **Cookies**: Used for website functionality and third-party services;
+- **Local storage**: Used to save user preferences (such as theme selection);
+- **Session storage**: Used for temporary storage of page state
 
-**Google Ads（谷歌广告）**
-- 可能收集的信息：广告展示数据、点击数据、用户兴趣信息
-- 用途：展示相关广告、广告效果分析
-- 隐私政策：[Google 广告隐私政策](https://policies.google.com/technologies/ads)
+## Your rights
 
-**Umami 分析**
-- 可能收集的信息：页面浏览量、访问来源、设备类型（匿名化处理）
-- 用途：网站流量统计和分析
-- 特点：注重隐私保护，不使用 Cookie，数据匿名化处理
-- 实时查看：您可以在网站导航栏中实时查看站点流量统计
+You have the right to:
+- Know what information we collect;
+- Request the deletion of your personal data (where applicable);
+- Opt out of certain data collection;
+- Disable cookies and JavaScript (which may affect the website’s functionality)
 
-## Cookie 和本地存储
+## How to protect your privacy
 
-我们的网站可能使用以下技术：
-- **Cookie**：用于网站功能和第三方服务
-- **本地存储**：用于保存用户偏好设置（如主题选择）
-- **会话存储**：用于临时存储页面状态
+You can protect your privacy by:
+- Using private browsing mode
+- Disabling third-party cookies
+- Using an ad blocker
+- Using a VPN service
+- Regularly clearing your browser data
 
-## 您的权利
+## Data Security
 
-您有权：
-- 了解我们收集的信息类型
-- 要求删除您的个人信息（如适用）
-- 选择退出某些数据收集
-- 禁用 Cookie 和 JavaScript（可能影响网站功能）
+Although we do not directly collect your personal information, we:
+- Use HTTPS encryption for data transmission
+- Select reputable third-party service providers
+- Regularly review the privacy policies of third-party services
 
-## 如何保护您的隐私
+## Contact Us
 
-您可以通过以下方式保护您的隐私：
-- 使用隐私浏览模式
-- 禁用第三方 Cookie
-- 使用广告拦截器
-- 使用 VPN 服务
-- 定期清理浏览器数据
+If you have any questions or concerns regarding this Privacy Policy, please contact us.
 
-## 数据安全
+## Reporting Abuse and Copyright Infringement
 
-虽然我们不直接收集您的个人信息，但我们：
-- 使用 HTTPS 加密传输
-- 选择信誉良好的第三方服务提供商
-- 定期审查第三方服务的隐私政策
+If you discover any abuse, infringement or other illegal or non-compliant behaviour on the website, please contact us via the following methods:
+- **Email**: hacknet.kaguya@gmail.com
 
-## 儿童隐私
-
-我们的网站不专门针对 13 岁以下的儿童。我们不会故意收集 13 岁以下儿童的个人信息。
-
-## 隐私政策更新
-
-我们可能会不时更新本隐私政策。任何更改都会在此页面上发布，重大更改会通过网站公告通知用户。
-
-## 联系我们
-
-如果您对本隐私政策有任何疑问或关注，请通过以下方式联系我们：
-- 通过网站联系页面
-- 发送邮件至网站管理员
-
-## 滥用与版权举报
-
-如果您发现网站内容存在滥用、侵权或其他违法违规行为，请通过以下方式联系我们：
-- **邮箱**：email@14131413.xyz
-- **Telegram**：https://t.me/yCENzh
-
-我们将认真对待每一个举报，并在收到举报后及时处理相关问题。
-
-## 适用法律
-
-本隐私政策受中华人民共和国法律管辖。我们努力遵守适用的数据保护法律法规。
+We take every report seriously and will address the relevant issues promptly upon receipt.
 
 ---
 
-*本隐私政策旨在透明地说明我们的数据处理实践。我们建议您定期查看本政策以了解任何更新。*
+*This Privacy Policy is intended to provide a transparent explanation of our data processing practices. We recommend that you review this policy periodically to stay informed of any updates.*
