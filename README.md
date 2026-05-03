@@ -2,7 +2,7 @@
 
 A static blog template based on [Astro](https://astro.build).
 
-## Refenrence
+## Reference
 
 Original repository: [saicaca/fuwari](https://github.com/saicaca/fuwari)
 
