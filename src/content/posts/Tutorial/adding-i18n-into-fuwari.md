@@ -111,10 +111,10 @@ In Fuwari, some interactive components (like the theme color slider) are built w
 
 Much of the text in Fuwari is hard-coded, so it required some refactoring, but the end result is excellent; at the very least, it satisfies my aesthetic preferences whilst providing support for bilingual.
 
-Writing a post is now as simple as dropping a `.md` file into the root folder, and its translation into the `/zh/` folder. Astro handles the rest—routing, category counting, next/previous post linking, and UI translation.
+In theory, as long as all modified sections are extracted separately, true internationalisation (i18n) can be implemented, and this should also improve maintainability. However, as I currently have no need for more than two languages, this approach is sufficient for now.
 
-To be honest, I’ve always fancied setting up a personal blog, and I’ve finally got round to doing it. Expect to see posts about development, tech, and whatever else I'm learning.
+I’ve actually been thinking about setting up a personal blog for quite some time, and I’ve finally got round to it. Going forward, I may post articles here on dev, tech, learning, and various random topics.
 
-Thanks for reading, and welcome to my blog! 
+welcome to my blog, and thanks for reading.
 
-Good morning, and in case I don't see you, good afternoon, good evening and good night.
+*Good morning, and in case I don't see you, good afternoon, good evening and good night.*
