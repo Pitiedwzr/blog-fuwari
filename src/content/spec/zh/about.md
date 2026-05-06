@@ -1,7 +1,7 @@
 # About
 ![Random Image of JJK](https://api.r10086.com/%E6%A8%B1%E9%81%93%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87api%E6%8E%A5%E5%8F%A3.php?%E5%9B%BE%E7%89%87%E7%B3%BB%E5%88%97=%E5%92%92%E6%9C%AF%E5%9B%9E%E6%88%98)
 
-本站 `Favicon` 原图取自 [Pixiv @ReRin](https://www.pixiv.net/artworks/113745329)
+本站 `Favicon` 来自[Favicon.io](https://favicon.io/)，版权归2020年Twitter公司及其他贡献者所有。
 
 # 关于&隐私政策
 
@@ -81,7 +81,3 @@
 - **邮箱**：hacknet.kaguya@gmail.com
 
 我们将认真对待每一个举报，并在收到举报后及时处理相关问题。
-
----
-
-*本隐私政策旨在透明地说明我们的数据处理实践。我们建议您定期查看本政策以了解任何更新。*

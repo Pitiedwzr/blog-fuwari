@@ -1,7 +1,7 @@
 # About
 ![Random Image of JJK](https://api.r10086.com/%E6%A8%B1%E9%81%93%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87api%E6%8E%A5%E5%8F%A3.php?%E5%9B%BE%E7%89%87%E7%B3%BB%E5%88%97=%E5%92%92%E6%9C%AF%E5%9B%9E%E6%88%98)
 
-The `Favicon` of this website is from [Pixiv @ReRin](https://www.pixiv.net/artworks/113745329)
+The `Favicon` of this website is from [Favicon.io](https://favicon.io/), Copyright 2020 Twitter, Inc and other contributors.
 
 # About&Privacy Policy
 
@@ -79,7 +79,3 @@ If you discover any abuse, infringement or other illegal or non-compliant behavi
 - **Email**: hacknet.kaguya@gmail.com
 
 We take every report seriously and will address the relevant issues promptly upon receipt.
-
----
-
-*This Privacy Policy is intended to provide a transparent explanation of our data processing practices. We recommend that you review this policy periodically to stay informed of any updates.*
