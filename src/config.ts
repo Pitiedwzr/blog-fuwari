@@ -34,11 +34,26 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	favicon: [
-		   {
-		     src: '/favicon/icon.webp',
+		{
+		     src: '/favicon/16x16.webp',
 		//   theme: 'light',
-		//   sizes: '32x32',
-		   }
+		     sizes: '16x16',
+		},
+		{
+			src: '/favicon/32x32.webp',
+			//   theme: 'light',
+			sizes: '32x32',
+		},
+		{
+			src: '/favicon/192x192.webp',
+			//   theme: 'light',
+			sizes: '192x192',
+		},
+		{
+			src: '/favicon/512x512.webp',
+			//   theme: 'light',
+			sizes: '512x512',
+		}
 	],
 };
 
