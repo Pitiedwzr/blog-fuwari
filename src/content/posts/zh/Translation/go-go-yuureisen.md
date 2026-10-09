@@ -4,7 +4,7 @@ published: 2026-10-09
 description: "『ゴーゴー幽霊船』（Go Go 幽灵船）的中日对照歌词与个人翻译注解"
 tags: ["J-POP", "米津玄師", "歌词中翻"]
 category: Translation
-draft: true
+draft: false
 series: Song Translation
 lang: zh-CN
 ---
